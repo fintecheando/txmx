@@ -1,0 +1,84 @@
+<div class="title-content-post">
+    <ol class="breadcrumb pull-left">
+        <li><a href="#">{{getApp.name}}</a></li>
+        <li><a href="#">Administración de vehículos</a></li>
+        <li ng-show="activeForm == 1"><a href="#" >Lista de los vehículos</a></li>
+        <li class="active" ng-show="activeForm == 0">Lista de los vehículos</li>
+        <li class="active" ng-show="activeForm == 1">Informacioń {{data.carMarker}}</li>
+    </ol>
+</div>
+<div class="content-post" ng-show="activeForm == 0">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="input-group input-search">
+                <i class="fa fa-search"></i>
+                <input type="text" class="form-control" placeholder="Búsqueda" ng-model="search">
+            </div>
+
+        </div>
+        <div class="col-md-3">
+            <div class="sort-search">
+                <select ng-model="selectType" ng-change="chooseType(selectType)" class="form-control">
+                    <option selected>Todos los vehículos</option>
+                    <option>4 Asientos</option>
+                    <option>7 Asientos</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="add-new-item">
+                <button type="button" class="btn btn-primary pull-right" ng-click="activeForm = 1"><i
+                        class="glyphicon glyphicon-plus"></i> Añadir nuevo
+                </button>
+                <button class="btn btn-primary pull-right"><a style="color: white;" download="data.xls" onclick="return ExcellentExport.excel(this, 'datatable', 'Sheet Name Here');">Export to Excel</a></button>
+            </div>
+        </div>
+        <!-- <div class="col-md-1"> -->
+        <!--     <div class="export-new-item"> -->
+        <!--         <button class="btn btn-success"><a download="data.xls" onclick="return ExcellentExport.excel(this, 'datatable', 'Sheet Name Here');">Export to Excel</a><button> -->
+        <!--     </div> -->
+        <!-- </div> -->
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="table-responsive">
+                <table class="table table-post" id="datatable">
+                    <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Vehículos</th>
+                        <th>Misterio</th>
+                        <th>Asientos</th>
+                        <th>Primeros Km</th>
+                        <th>Precio de Primeros Km</th>
+                        <th>Segundos Km</th>
+                        <th>Precio de Segundos Km</th>
+                        <th>Último KM</th>
+                        <th>Precio de último KM</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="data in listDriverTypes | filter:search"
+                        ng-click="gotoPage('main.detailCarType',{id : data._id})">
+                        <td>{{$index}}</td>
+                        <td>{{data.carMarker}}</td>
+                        <td>{{data.color}}</td>
+                        <td>{{data.seatNum}}</td>
+                        <td> < {{data.firstKm}} Km</td>
+                        <td>{{data.firstPrice}} VNĐ</td>
+                        <td>{{data.firstKm}} Km đến < {{data.middleKm}} Km</td>
+                        <td>{{data.middlePrice}} VNĐ</td>
+                        <td>Lớn hơn {{data.middleKm}} Km</td>
+                        <td>{{data.lastPrice}} VNĐ</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" ng-show="activeForm == 1">
+        <div class="col-xs-12">
+            <div ng-include="'views/cartype/form-carType.html'"></div>
+        </div>
+</div>
