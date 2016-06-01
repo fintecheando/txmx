@@ -55,15 +55,15 @@ margin-right: 10px;" type="text"
                     </div>
 
                     <p>
-                        <strong>Tên đăng nhập: </strong> {{driver.username}}
+                        <strong>Nombre de usuario: </strong> {{driver.username}}
                     </p>
 
                     <p>
-                        <strong>Ngày sinh: </strong> {{driver.birthday | amDateFormat:'D - MM - YYYY'}}
+                        <strong>Fecha de nacimiento: </strong> {{driver.birthday | amDateFormat:'D - MM - YYYY'}}
                     </p>
 
                     <p>
-                        <strong style="float: left;"> Số điện thoại : </strong>
+                        <strong style="float: left;"> Número de teléfono : </strong>
                     <span ng-show="enabalePhone" ng-click="changePhone()">{{driver.phone}}</span>
                     <span ng-hide="enabalePhone" style="position: relative;
 top: -7px;">
@@ -71,14 +71,14 @@ top: -7px;">
                 margin-right: 10px; position: relative;
 top: 0px;" type="text"
                                                                   ng-model="driver.phone"/>
-                                        <button class="btn btn-success" ng-click="update(driver)"> Cập nhật</button>
-                                        <button class="btn btn-default" ng-click="changePhone()"> Hủy</button>
+                                        <button class="btn btn-success" ng-click="update(driver)"> Actualizar</button>
+                                        <button class="btn btn-default" ng-click="changePhone()"> Cancelar</button>
                          </span>
 
                     </p>
 
                     <p>
-                        <strong>Đánh giá : </strong> {{driver.like}}
+                        <strong>Calificar : </strong> {{driver.like}}
                     </p>
                 </div>
 
@@ -88,16 +88,16 @@ top: 0px;" type="text"
                     <div class="col-md-2">
                         <ul class="list-unstyled info-taxi-people">
                             <li>
-                                <b>Giới thiệu:</b>
+                                <b>Introducir:</b>
                             </li>
                             <li>
-                                <b>Địa chỉ:</b>
+                                <b>Dirección:</b>
                             </li>
                             <li>
-                                <b>Loại xe:</b>
+                                <b>Vehiculos:</b>
                             </li>
                             <li>
-                                <b>Số chỗ:</b>
+                                <b>Asientos:</b>
                             </li>
                         </ul>
                     </div>
@@ -129,16 +129,15 @@ top: 0px;" type="text"
                 <button type="button" class="btn btn-primary" ng-click="activeFormFun()"><i
                         class="glyphicon glyphicon-edit"></i> Sửa thông tin
                 </button>
-                <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-lock"></i> Đổi
-                    mật khẩu
+                <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-lock"></i> Cambiar contraseña
                 </button>
             </div>
             <div class="button-edit" ng-show="activeForm">
                 <button ng-click="update(driver);activeFormFun()" type="button" class="btn btn-success"><i
-                        class="glyphicon glyphicon-edit"></i> Cập nhật
+                        class="glyphicon glyphicon-edit"></i> Actualizar
                 </button>
                 <button type="button" class="btn btn-primary" ng-click="back()"><i
-                        class="glyphicon glyphicon-lock"></i> Hủy bỏ
+                        class="glyphicon glyphicon-lock"></i> Regresar
                 </button>
             </div>
 <!--            <div class="row">
@@ -282,12 +281,12 @@ margin-right: 10px;" type="text"
                 <thead>
                 <tr>
                     <th>STT</th>
-                    <th>Bắt đầu</th>
-                    <th>Kết thúc</th>
-                    <th>Tên khách hàng</th>
-                    <th>Điểm bắt đầu</th>
-                    <th>Điểm kết thúc</th>
-                    <th>Độ dài</th>
+                    <th>Inicio</th>
+                    <th>Fin</th>
+                    <th>Nombre del cliente</th>
+                    <th>Punto de partida</th>
+                    <th>Punto final</th>
+                    <th>Longitud</th>
                 </tr>
                 </thead>
                 <tbody>
