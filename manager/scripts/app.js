@@ -213,9 +213,9 @@ angular
                         }
                         driving.save(function (err, result) {
                             if (err) {
-                                console.log('Lỗi: ', err)
+                                console.log('Error: ', err)
                             } else {
-                                toastr.success('Thay đổi ảnh thành công');
+                                toastr.success('Éxito del cambio de imagen');
                                 appDataStore.Drivings.update(driving);
                             }
                         })
@@ -300,7 +300,7 @@ angular
                             }
                         }
                     } else {
-                        console.log('failed to logout!');
+                        console.log('Error al salir del sistema');
                     }
                 });
             };
