@@ -10,7 +10,7 @@
     <div class="title-state list-taxi">
         <ul class="nav nav-pills">
             <li><a>Número total de vehículos en el mapa  : {{Object.keys(listTaxi).length}}</a></li>
-            <li><a>Número de coches corriendo : {{Object.keys(listTaxiRuning).length}}</a></li>
+            <li><a>Número de coches circulando : {{Object.keys(listTaxiRuning).length}}</a></li>
             <li><a>Número de coches de espera : {{Object.keys(listTaxiWaiting).length}}</a></li>
             <li class="pull-right"> <input type="text" placeholder="Búsqueda" />
             </li>
@@ -34,14 +34,14 @@
 
 
 <!------
-    Hiển thị thông tin tài xế
+    Pantalla de información transparente
 ------->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Thông tin tài xế</h4>
+                <h4 class="modal-title" id="myModalLabel">Información para el conductor</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -50,25 +50,25 @@
                     </div>
                     <div class="col-md-8">
                         <ul>
-                            <li><strong>Họ tên</strong> : {{taxiInfo.fullname}}</li>
-                            <li><strong>Số điện thoại</strong> : {{taxiInfo.phone}}</li>
-                            <li><strong>Địa chỉ</strong> : {{taxiInfo.location}}</li>
-                            <li><strong>Loại xe</strong> : {{taxiInfo.type.carMarker}}</li>
-                            <li><strong>Số chỗ</strong> : 4</li>
+                            <li><strong>Nombre completo</strong> : {{taxiInfo.fullname}}</li>
+                            <li><strong>Número de teléfono</strong> : {{taxiInfo.phone}}</li>
+                            <li><strong>Dirección</strong> : {{taxiInfo.location}}</li>
+                            <li><strong>Vehículos</strong> : {{taxiInfo.type.carMarker}}</li>
+                            <li><strong>Asientos</strong> : 4</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
-                <button type="button" class="btn btn-primary" ng-click="$state.go('main.detailDriving', {id: taxiInfo.id})">Thông tin chi tiết</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrado</button>
+                <button type="button" class="btn btn-primary" ng-click="$state.go('main.detailDriving', {id: taxiInfo.id})">Detalles</button>
             </div>
         </div>
     </div>
 </div>
 
 <!------
-    End Hiển thị thông tin tài xế
+    Pantalla de información del conductor final
 ------->
 
 <style>

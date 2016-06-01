@@ -5,14 +5,14 @@
 
         <ol class="breadcrumb">
             <li><a href="#">{{getApp.name}}</a></li>
-            <li><a ui-sref="main.managerDriving">Quản lý lái xe</a></li>
-            <li class="active">Thông tin</li>
+            <li><a ui-sref="main.managerDriving">Administración de Conductores</a></li>
+            <li class="active">Información</li>
         </ol>
     </div>
     <div class="col-xs-3">
         <div class="pull-right">
             <button type="button" class="btn btn-default" ng-click="gotoPage('main.managerDriving')"><i
-                    class="glyphicon glyphicon-chevron-left"></i> Quay lại
+                    class="glyphicon glyphicon-chevron-left"></i> Regresar
             </button>
         </div>
     </div>
@@ -20,8 +20,8 @@
 
 <div class="detailt-tab">
 <ul id="myTab" class="nav nav-tabs">
-    <li class="active"><a href="#profile" data-toggle="tab">Thông tin</a></li>
-    <li class=""><a href="#historyLocation" data-toggle="tab">Lịch sử lộ trình</a></li>
+    <li class="active"><a href="#profile" data-toggle="tab">Información</a></li>
+    <li class=""><a href="#historyLocation" data-toggle="tab">Hoja historico de rutas</a></li>
 </ul>
 <div id="myTabContent" class="tab-content">
 
@@ -38,8 +38,8 @@
 
                         <div class="upload-add" ng-click="uploads()" ng-class="classShowUpload">
                             <nav>
-                                <a>Tải lên</a>
-                                <a>Xóa</a>
+                                <a>Subir</a>
+                                <a>Borrar</a>
                             </nav>
                         </div>
                     </div>
@@ -50,8 +50,8 @@
                     <div ng-hide="enabale"><input ng-enter="update(driver)" class="form-control" style="width: 250px;float: left;
 margin-right: 10px;" type="text"
                                                   ng-model="driver.fullname"/>
-                        <button class="btn btn-success" ng-click="update(driver)"> Cập nhật</button>
-                        <button class="btn btn-default" ng-click="change()"> Hủy</button>
+                        <button class="btn btn-success" ng-click="update(driver)"> Actualizar</button>
+                        <button class="btn btn-default" ng-click="change()"> Cancelar</button>
                     </div>
 
                     <p>
@@ -127,7 +127,7 @@ top: 0px;" type="text"
             </div>
             <div class="button-edit" ng-hide="activeForm">
                 <button type="button" class="btn btn-primary" ng-click="activeFormFun()"><i
-                        class="glyphicon glyphicon-edit"></i> Sửa thông tin
+                        class="glyphicon glyphicon-edit"></i> Acciones
                 </button>
                 <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-lock"></i> Cambiar contraseña
                 </button>
@@ -145,7 +145,7 @@ top: 0px;" type="text"
                     <table class="table">
                         <thead>
                         <tr>
-                            <th style="width : 150px;">Thông tin</th>
+                            <th style="width : 150px;">Acciones</th>
                             <th></th>
 
                         </tr>
@@ -266,7 +266,7 @@ margin-right: 10px;" type="text"
     </div>
 
     <div class="tab-pane fade" id="historyLocation">
-        <h4 ng-show="userNotRouter" class="text-center">Lái xe {{driver.username}} chưa có lộ trình nào!!!</h4>
+        <h4 ng-show="userNotRouter" class="text-center">¡El conductor {{driver.username}} no tiene registro historico de rutas!</h4>
 
         <div ng-hide="userNotRouter">
             <div class="search-message">
