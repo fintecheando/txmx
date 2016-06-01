@@ -7,10 +7,10 @@
 <div class="title-content-post">
     <ol class="breadcrumb pull-left">
         <li><a href="#">{{getApp.name}}</a></li>
-        <li><a href="#">Quản lý lái xe</a></li>
-        <li><a href="#">Danh sách lái xe</a></li>
-        <li class="active"><a href="#">Danh sách lái xe</a></li>
-        <li class="active">Thông tin lái xe</li>
+        <li><a href="#">Administrador de controladores</a></li>
+        <li><a href="#">Lista de unidad</a></li>
+        <li class="active"><a href="#">Lista de unidad</a></li>
+        <li class="active">Información del Conductor</li>
     </ol>
     <div class="pull-right" ng-show="activeForm == 1">
         <button type="button" class="btn btn-default" ng-click="back()"><i
@@ -26,9 +26,9 @@
                 <div class="col-md-4">
                     <div class="sort-search">
                         <select ng-model="selectSearch" ng-change="select(selectSearch)" class="form-control">
-                            <option>Tìm kiếm Kiếm theo tên</option>
-                            <option>Tìm kiếm Kiếm theo số chỗ</option>
-                            <option>Tìm kiếm theo Xe</option>
+                            <option>Búsqueda por nombre</option>
+                            <option>Busque por numero de asientos</option>
+                            <option>Búsqueda por vehículo</option>
                         </select>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                     <div class="sort-search">
                         <select ng-change="selectCar(myCheckCar)" class="form-control" ng-model="myCheckCar"
                                 ng-options="list.carMarker for list in listDriverTypes">
-                            <option value="">Tất cả xe</option>
+                            <option value="">Todos los vehículos</option>
                         </select>
                     </div>
                 </div>
@@ -45,16 +45,16 @@
                     <div class="sort-search">
                         <select ng-model="selectSearchSeatNum" ng-change="selectSeat(selectSearchSeatNum)"
                                 class="form-control">
-                            <option selected>Tất cả</option>
-                            <option>4 Chỗ</option>
-                            <option>7 Chỗ</option>
+                            <option selected>Todos</option>
+                            <option>4 Asientos</option>
+                            <option>7 Asientos</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="input-group input-search">
                         <i class="fa fa-search"></i>
-                        <input type="text" class="form-control" placeholder="Tìm kiếm" ng-model="search">
+                        <input type="text" class="form-control" placeholder="Búsqueda" ng-model="search">
                     </div>
 
                 </div>
@@ -66,7 +66,7 @@
         <div class="col-md-2">
             <div class="add-new-item">
                 <button type="button" class="btn btn-primary pull-right" ng-click="activeForm = 1">
-                  <i class="glyphicon glyphicon-plus"></i> Thêm mới
+                  <i class="glyphicon glyphicon-plus"></i> Añadir nuevo
                 </button>
             </div>
         </div>
@@ -78,13 +78,13 @@
                 <table class="table table-post">
                     <thead>
                     <tr>
-                        <th>Ảnh</th>
-                        <th>Họ và Tên</th>
-                        <th>Đánh giá</th>
-                        <th>Điện thoại</th>
-                        <th>Kiểu xe</th>
-                        <th>Số chỗ</th>
-                        <th>Chức năng</th>
+                        <th>Imagen</th>
+                        <th>Nombre completo</th>
+                        <th>Evaluar</th>
+                        <th>Teléfono</th>
+                        <th>Modelos</th>
+                        <th>Asientos</th>
+                        <th>Funciones</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -102,8 +102,8 @@
                         <td ng-click="gotoPage('main.detailDriving',{id : data._id})">{{data.phone}}</td>
                         <td ng-click="gotoPage('main.detailDriving',{id : data._id})">{{data.type.carMarker}}</td>
                         <td ng-click="gotoPage('main.detailDriving',{id : data._id})"> {{data.type.seatNum}}</td>
-                        <td><a ng-click="deleteDriving(data,$index)"> Xóa </a> | <a
-                                ng-click="gotoPage('main.detailDriving',{id : data._id})"> Sửa </a></td>
+                        <td><a ng-click="deleteDriving(data,$index)"> Borrar </a> | <a
+                                ng-click="gotoPage('main.detailDriving',{id : data._id})"> Reparación </a></td>
                     </tr>
 
                     </tbody>
