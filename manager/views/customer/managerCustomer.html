@@ -84,7 +84,7 @@
         <li class="active">Data</li>
     </ol>
     <div class="pull-right" ng-show="activeForm == 1">
-        <button type="button" class="btn btn-default" ng-click="back()"><i class="glyphicon glyphicon-chevron-left"></i> Quay lại</button>
+        <button type="button" class="btn btn-default" ng-click="back()"><i class="glyphicon glyphicon-chevron-left"></i> De nuevo a</button>
     </div>
 </div>
 <div class="content-post" ng-show="activeForm == 0">
@@ -92,22 +92,22 @@
         <div class="col-md-3">
             <div class="input-group input-search">
                 <i class="fa fa-search"></i>
-                <input type="text" class="form-control" placeholder="Tìm kiếm">
+                <input type="text" class="form-control" placeholder="Búsqueda">
             </div>
 
         </div>
         <div class="col-md-3">
             <div class="sort-search">
                 <select class="form-control">
-                    <option>Tìm kiếm theo ngày</option>
-                    <option>Tìm kiếm theo vần</option>
+                    <option>Búsqueda por fecha</option>
+                    <option>Buscar por orden alfabético</option>
                 </select>
             </div>
         </div>
         <div class="col-md-5">
             <div class="add-new-item">
                 <button type="button" class="btn btn-primary pull-right" ng-click="activeForm = 1"><i
-                        class="glyphicon glyphicon-plus"></i> Thêm mới
+                        class="glyphicon glyphicon-plus"></i> Añadir nuevo
                 </button>
             </div>
 
@@ -115,7 +115,7 @@
         <div class="col-md-1">
             <div class="export-new-item">
                 <button type="button" class="btn btn-primary pull-right" ng-click="alert('Function has updating ...')"><i
-                        class="glyphicon glyphicon-download-alt"></i> Export
+                        class="glyphicon glyphicon-download-alt"></i> Exportar
                 </button>
             </div>
         </div>
@@ -127,8 +127,8 @@
                     <thead>
                     <tr>
                         <th>STT</th>
-                        <th>DeviceID</th>
-                        <th>Số lần gọi Taxi</th>
+                        <th>Clave del Dispositivo</th>
+                        <th>Taxi Número de llamadas</th>
                     </tr>
                     </thead>
                     <tbody>
